@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const errorMsg = document.getElementById('error-msg');
 
       const userDetails = { username, password };
-      const url = 'http://localhost:3000/api/users/register';
+      const url = 'https://notes-server-ebzv.onrender.com/api/users/register';
 
       try {
           const response = await fetch(url, {

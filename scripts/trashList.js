@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const getNotesListFromServer = async () => {
         try {
-            const getNotesURL = 'http://localhost:3000/api/notes';
+            const getNotesURL = 'https://notes-server-ebzv.onrender.com/api/notes';
             const response = await fetch(getNotesURL, {
                 method: 'GET',
                 headers: {
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const updateNoteColor = async (noteId, color) => {
         try {
-            const updateColorURL = `http://localhost:3000/api/notes/update/${noteId}/background-color`;
+            const updateColorURL = `https://notes-server-ebzv.onrender.com/api/notes/update/${noteId}/background-color`;
             const response = await fetch(updateColorURL, {
                 method: 'PATCH',
                 body: JSON.stringify({ backgroundColor: color }),
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const untrashNote = async (noteId) => {
         try {
-            const untrashURL = `http://localhost:3000/api/notes/untrash/${noteId}`;
+            const untrashURL = `https://notes-server-ebzv.onrender.com/api/notes/untrash/${noteId}`;
             const response = await fetch(untrashURL, {
                 method: 'PATCH',
                 headers: {
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const deleteNotePermanently = async (noteId) => {
         try {
-            const deleteURL = `http://localhost:3000/api/notes/delete/${noteId}`;
+            const deleteURL = `https://notes-server-ebzv.onrender.com/api/notes/delete/${noteId}`;
             const response = await fetch(deleteURL, {
                 method: 'DELETE',
                 headers: {

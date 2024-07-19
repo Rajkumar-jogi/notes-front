@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const getNotesListFromServer = async () => {
         try {
-            const response = await fetch('http://localhost:3000/api/notes', {
+            const response = await fetch('https://notes-server-ebzv.onrender.com/api/notes', {
                 method: 'GET',
                 headers: {
                     Authorization: `Bearer ${jwtToken}`,
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const updateNoteColor = async (noteId, color) => {
         try {
-            const response = await fetch(`http://localhost:3000/api/notes/update/${noteId}/background-color`, {
+            const response = await fetch(`https://notes-server-ebzv.onrender.com/api/notes/update/${noteId}/background-color`, {
                 method: 'PATCH',
                 body: JSON.stringify({ backgroundColor: color }),
                 headers: {
@@ -134,13 +134,13 @@ document.addEventListener('DOMContentLoaded', () => {
             let updateStatusURL;
             let statusUpdate;
             if (action === 'delete') {
-                updateStatusURL = `http://localhost:3000/api/notes/delete/${noteId}`;
+                updateStatusURL = `https://notes-server-ebzv.onrender.com/api/notes/delete/${noteId}`;
                 statusUpdate = { deleted: true };
             } else if (action === 'archive') {
-                updateStatusURL = `http://localhost:3000/api/notes/archive/${noteId}`;
+                updateStatusURL = `https://notes-server-ebzv.onrender.com/api/notes/archive/${noteId}`;
                 statusUpdate = { archived: true };
             } else if (action === 'unarchive') {
-                updateStatusURL = `http://localhost:3000/api/notes/unarchive/${noteId}`;
+                updateStatusURL = `https://notes-server-ebzv.onrender.com/api/notes/unarchive/${noteId}`;
                 statusUpdate = { archived: false };
             }
 
@@ -164,8 +164,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const updateNoteLabel = async (noteId, label, action) => {
         try {
             const endpoint = action === 'add' 
-                ? `http://localhost:3000/api/notes/update/${noteId}/label`
-                : `http://localhost:3000/api/notes/${noteId}/labels/remove`;
+                ? `https://notes-server-ebzv.onrender.com/api/notes/update/${noteId}/label`
+                : `https://notes-server-ebzv.onrender.com/api/notes/${noteId}/labels/remove`;
 
             const response = await fetch(endpoint, {
                 method: 'PATCH',

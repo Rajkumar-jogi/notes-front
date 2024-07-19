@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const jwtToken = localStorage.getItem('token');
 
-            const saveNoteURL = 'http://localhost:3000/api/notes/create-note';
+            const saveNoteURL = 'https://notes-server-ebzv.onrender.com/api/notes/create-note';
             const notes = {
                 title,
                 content

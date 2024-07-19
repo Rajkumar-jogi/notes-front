@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to fetch notes from server
     const getNotesListFromServer = async () => {
         try {
-            const getNotesURL = 'http://localhost:3000/api/notes/archived';
+            const getNotesURL = 'https://notes-server-ebzv.onrender.com/api/notes/archived';
             const response = await fetch(getNotesURL, {
                 method: 'GET',
                 headers: {
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to update note color
     const updateNoteColor = async (noteId, color) => {
         try {
-            const updateColorURL = `http://localhost:3000/api/notes/update/${noteId}/background-color`;
+            const updateColorURL = `https://notes-server-ebzv.onrender.com/api/notes/update/${noteId}/background-color`;
             const response = await fetch(updateColorURL, {
                 method: 'PATCH',
                 body: JSON.stringify({ backgroundColor: color }),
@@ -119,10 +119,10 @@ document.addEventListener('DOMContentLoaded', () => {
             let updateStatusURL;
             let statusUpdate;
             if (action === 'delete') {
-                updateStatusURL = `http://localhost:3000/api/notes/delete/${noteId}`;
+                updateStatusURL = `https://notes-server-ebzv.onrender.com/api/notes/delete/${noteId}`;
                 statusUpdate = { deleted: true };
             } else if (action === 'unarchive') {
-                updateStatusURL = `http://localhost:3000/api/notes/unarchive/${noteId}`;
+                updateStatusURL = `https://notes-server-ebzv.onrender.com/api/notes/unarchive/${noteId}`;
                 statusUpdate = { archived: false };
             }
 
